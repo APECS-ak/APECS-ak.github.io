@@ -1,0 +1,72 @@
+---
+title: "Orientation"
+author: "Wendel Raymond"
+date: "February 8, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# APECS, RStudio, R markdown, GitHub and you!
+Thats right you! Here we will provide the steps and resrouces to get integrated with RStudio, R markdown and GitHub. We promise its not that bad.
+
+## But why though?
+![](https://ih0.redbubble.net/image.359892693.3208/pp%2C185x205-pad%2C210x230%2Cf8f8f8.lite-1u1.jpg)
+
+There are two major reasons.
+
+1. GitHub allows for tracking the changes to code and content across many people. This makes editing, contributing, and reverting easy. GitHub also provides interfaces that make sharing content way cleaner than tones of emails.
+2. The overlords have spoken and you have no choice.
+
+## Getting started
+We have barrowed many of the steps and techneques from the [SASAP training](https://nceas.github.io/sasap-training/materials/reproducible-analysis-in-r/index.html) that Tiff and I attended. We encourage you to use their site as an additional resource.
+
+## RStudio and Git/GitHub set up
+1. If you do not have RStudio already, [download](https://www.rstudio.com/products/rstudio/download/) it.
+
+2. If you have RStudio make sure that you have the most recent version.
+```{r rstudio version, eval = FALSE}
+RStudio.Version()
+```
+If the output of this does not say 1.1.383, you should update your RStudio. Do this by selecting Help -> Check for Updates and follow the prompts.
+
+3. There are some specific packages that you will need. Follow this code.
+```{r packages, eval = FALSE}
+packages <- c("dataone", "datapack", "devtools", "dplyr", "DT", "EML", "ggplot2", "ggpmisc", "kableExtra", "leaflet", "readxl", "tidyr")
+
+for (package in packages) { 
+  if (!(package %in% installed.packages())) { 
+    install.packages(package) 
+  } 
+}
+
+rm(packages) #remove variables from workspace
+```
+
+4. Setting up git and GitHub
+  + Download [git](https://git-scm.com/downloads). This is good time to note that git and GitHub are differnet things. git is version control software and GitHub is a web interface for managing your git.
+  + If you dont have one already make a [GitHub](https://github.com/) account. Remember your username and password!
+  + Open RStudio and go to the Terminal tab (should be next to the Console tab). In the terminal you will set the global options for your git
+```{cmd, eval = FALSE}
+git config --global user.name "Your Name"
+git config --global user.email "yourEmail@emaildomain.com"
+git config --global --list
+```
+
+Hurray you did it! now we can move on to talking about repositories and the mechanics of GitHub
+
+## Repositories and all that
+Repositories are where things are stored on GitHub. You can think of them as folders, but special folders that live on your computer and on GitHub, and are also version controlled. This orientation is a repository of the APECS-ak organization. There is also the APECS-master repository that has everything in it. We will come back to this later.
+
+### Practice
+First lets make a practice repository on your own GitHub account **NOT** in the APECS-ak account just yet.
+
+### Cloneing the APECS-master repository
+
+## Best Practices
+
+## GitHub Vocabulary
+
+## Resources
+1. RMarkdown
+2. dplyr and tidyr
+3. ggplot2
