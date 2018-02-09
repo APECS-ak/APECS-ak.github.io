@@ -6,6 +6,8 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+![](http://apecs-ak.org/wp-content/uploads/2017/08/cropped-APECS-Logo-326pixels.gif)
+
 # APECS, RStudio, R markdown, GitHub and you!
 Thats right you! Here we will provide the steps and resrouces to get integrated with RStudio, R markdown and GitHub. We promise its not that bad.
 
@@ -57,16 +59,53 @@ Hurray you did it! now we can move on to talking about repositories and the mech
 ## Repositories and all that
 Repositories are where things are stored on GitHub. You can think of them as folders, but special folders that live on your computer and on GitHub, and are also version controlled. This orientation is a repository of the APECS-ak organization. There is also the APECS-master repository that has everything in it. We will come back to this later.
 
+We will also go over what it means to commit, push and pull.
+
 ### Practice
-First lets make a practice repository on your own GitHub account **NOT** in the APECS-ak account just yet.
+First lets make a practice repository on your own GitHub account **NOT** in the APECS-ak account just yet. There are multiple ways to do this but we will show you what we think in the easiest. There are steps for doing it in other ways on the SASAP training site.
+
+1. Go to your GitHub account and click repositories.
+2. In the upper right click "new" and follow the instructions. 
+3. Once you have created the repository you can click the clone/download button. Copy that stuff there
+4. Now open RStudio and create a new project. When promted select the version control option. Paste that stuff you copied from GitHub and fill in the other fields.
+5. Hurray you have now cloned your repository. It now exists on your local machine and on GitHub.
+
+Lets do some work now. Create a new R script or R markdown from this new repository. Make up some code. Now you can save it to you local machine but we also want to send it up to GitHub too. How do you do that?
+
+1. In the upper right panel of your RStudio window there is a tab labeled Git, click it. You will see the new R script you made and maybe some other stuff. 
+2. Check the little boxes next to the items, this is called staging.
+3. Click the commit button. This opens a window where you can see the changes you made form the previous version. 
+4. Fill in the commit message box. Be briefe but descriptive. Click commit.
+5. Now to get you in the practice click pull. This pulls down the most recent version of the repository from GitHub. In this example is does not really matter because you are the only one working in your repository but that might not be the case with APECS. If you push without having the most recent version on your machine you set us up for having a merge conflict. Which is not fun.
+6. Now click push.
+7. Go back to your repository in your browser and you will see that new file you created. Hurray!
 
 ### Cloneing the APECS-master repository
 
+## Whats is in APECS-master anyway?
+
 ## Best Practices
 
+### Workflow
+
+### Naming convention
+
 ## GitHub Vocabulary
+GitHub has a complete list [here](https://help.github.com/articles/github-glossary/) but here are some key ones beyond what we have talked about above, which we hope you at least intuitivly understand now.
+
+**Branch:**A branch is a parallel version of a repository. It is contained within the repository, but does not affect the primary or master branch allowing you to work freely without disrupting the "live" version. When you've made the changes you want to make, you can merge your branch back into the master branch to publish your changes.
+
+**Fork:**A fork is a personal copy of another user's repository that lives on your account. Forks allow you to freely make changes to a project without affecting the original. Forks remain attached to the original, allowing you to submit a pull request to the original's author to update with your changes. You can also keep your fork up to date by pulling in updates from the original.
+
+**Merge:**Merging takes the changes from one branch (in the same repository or from a fork), and applies them into another. This often happens as a pull request (which can be thought of as a request to merge), or via the command line. A merge can be done automatically via a pull request via the GitHub web interface if there are no conflicting changes, or can always be done via the command line. For more information, see "Merging a pull request."
+
+**Organization:**Organizations are shared accounts where businesses and open-source projects can collaborate across many projects at once. Owners and administrators can manage member access to the organization's data and projects with sophisticated security and administrative features.
 
 ## Resources
-1. RMarkdown
-2. dplyr and tidyr
-3. ggplot2
+### RMarkdown
+RMarkdown is amazing and we highly recomend that you learn how it works. If you are even somewhat comfortable/familier with R it is not that much of a change. The biggest benefit is that RMarkdown supports a more natural way of writing your code. You can seamlesslly integrate normal text with R code, links, picture, output etc. all in one place. The second amazing thing is that it is super easy to share what you did with collaborators in a clean, clear, reproducible product. No more sting of emails with attached figures that don't have any context. Now Rmarkdown does come with another set of vocabulary that you will have to become familer with, but thing of it as a new R package. The more you use it the easier it will become. There are also great online resources. Like this [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
+
+### dplyr and tidyr
+If you know about and have used these packages already you know why we think this is important. These packages gratly simplify data manipulation and summarization. See [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+
+### ggplot2
