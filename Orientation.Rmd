@@ -48,7 +48,7 @@ rm(packages) #remove variables from workspace
   + Download [git](https://git-scm.com/downloads). This is good time to note that git and GitHub are differnet things. git is version control software and GitHub is a web interface for managing your git.
   + If you dont have one already make a [GitHub](https://github.com/) account. Remember your username and password!
   + Open RStudio and go to the Terminal tab (should be next to the Console tab). In the terminal you will set the global options for your git
-```{cmd, eval = FALSE}
+```{r, eval = FALSE}
 git config --global user.name "Your Name"
 git config --global user.email "yourEmail@emaildomain.com"
 git config --global --list
@@ -65,8 +65,12 @@ We will also go over what it means to commit, push and pull.
 First lets make a practice repository on your own GitHub account **NOT** in the APECS-ak account just yet. There are multiple ways to do this but we will show you what we think in the easiest. There are steps for doing it in other ways on the SASAP training site.
 
 1. Go to your GitHub account and click repositories.
-2. In the upper right click "new" and follow the instructions. 
-3. Once you have created the repository you can click the clone/download button. Copy that stuff there
+2. In the upper right click "new" and follow the instructions.
+![](Images/repo.png)
+
+3. Once you have created the repository you can click the clone/download button. Copy the URL looking thing
+![](Images/clone.png)
+
 4. Now open RStudio and create a new project. When promted select the version control option. Paste that stuff you copied from GitHub and fill in the other fields.
 5. Hurray you have now cloned your repository. It now exists on your local machine and on GitHub.
 
@@ -81,14 +85,34 @@ Lets do some work now. Create a new R script or R markdown from this new reposit
 7. Go back to your repository in your browser and you will see that new file you created. Hurray!
 
 ### Cloneing the APECS-master repository
+Follow the same steps as above but the repositiry already exists, so you can jump to step 3. Now is a good time to take a moment to think about where on your machine you want this folder to sit. There is a lot of stuff in the repository so it might take some time to download.
 
 ## Whats is in APECS-master anyway?
+The idea is that everything is in here. That way anyone can access data or code at any time. Content is broken down in to folders that roughly correspond to the different working groups of APECS. Don't see a folder corresponding to a project you are working on? No worries you can create one. Within a projects folder you will find code for doing various things related to that data. 
+
+The most important folder is the ALL_DATA folder. This is where all the data goes, whether it is RAW or derived. What does that mean? We are calling RAW data .csv files that nothing has been done to other than be entered and quality controlled. These files should not be edited, unless there is a very very very good reason and you tell Tiff about it. You may be asking, "what if my raw data has weird records in it that I need to fix before analysis?", no worries you can write code to make those changes and make a new file called data_CLEAN.csv. Now you may be thinking "but my raw data is not really the form I want it in for my analysis, then what?", no worries again, you can write code to summerize, massage, whatever to your raw data and save it as data_description_derived.csv. This is a great segway to talk about best practices. 
 
 ## Best Practices
+Lets talk about best practices. These are a combination of best practices of reproducible science and "rules" that we have come up for the APECS project.
 
 ### Workflow
+First lets start with the genreal workflow that we would like you to follow.
+
+When starting to work on anyting in the APECS-master repository
+1. Pull
+2. do your work
+3. Save to your machine
+4. Commit
+5. Pull
+6. Review any changes/merges etc
+7. Push
+
+Lets go over how things work on the data end of things. This is really important. It will make everyones life easier in the long run. Take a look at the schematic below.
+
+![](Images/data.png)
 
 ### Naming convention
+ADD STUFF HERE
 
 ## GitHub Vocabulary
 GitHub has a complete list [here](https://help.github.com/articles/github-glossary/) but here are some key ones beyond what we have talked about above, which we hope you at least intuitivly understand now.
@@ -102,6 +126,8 @@ GitHub has a complete list [here](https://help.github.com/articles/github-glossa
 **Organization:**Organizations are shared accounts where businesses and open-source projects can collaborate across many projects at once. Owners and administrators can manage member access to the organization's data and projects with sophisticated security and administrative features.
 
 ## Resources
+Any of these topics could take up a whole day or more of disucussion and practice so we will just point you in the right direction for now. If you would like formal instuction we can arrange that.
+
 ### RMarkdown
 RMarkdown is amazing and we highly recomend that you learn how it works. If you are even somewhat comfortable/familier with R it is not that much of a change. The biggest benefit is that RMarkdown supports a more natural way of writing your code. You can seamlesslly integrate normal text with R code, links, picture, output etc. all in one place. The second amazing thing is that it is super easy to share what you did with collaborators in a clean, clear, reproducible product. No more sting of emails with attached figures that don't have any context. Now Rmarkdown does come with another set of vocabulary that you will have to become familer with, but thing of it as a new R package. The more you use it the easier it will become. There are also great online resources. Like this [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
 
@@ -109,3 +135,4 @@ RMarkdown is amazing and we highly recomend that you learn how it works. If you 
 If you know about and have used these packages already you know why we think this is important. These packages gratly simplify data manipulation and summarization. See [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 
 ### ggplot2
+The ggplot2 package makes it fairly easy to make really good looking graphics. See [cheet sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
