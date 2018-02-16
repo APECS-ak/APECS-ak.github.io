@@ -1,22 +1,18 @@
 ---
 title: "Orientation"
-author: "Wendel Raymond"
+author: "Wendel Raymond, Tiff Stephens, Bryce Mecum"
 date: "February 8, 2018"
 output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-```{r setup, echo=FALSE}
-knitr::opts_chunk$set(fig.align="center")
-```
-
-![](http://apecs-ak.org/wp-content/uploads/2017/08/cropped-APECS-Logo-326pixels.gif)
+<img style="display: block; margin: 0 auto;" src="http://apecs-ak.org/wp-content/uploads/2017/08/cropped-APECS-Logo-326pixels.gif" />
 
 # APECS, RStudio, GitHub, Rmarkdown and you!
 Thats right you! Here we will provide the steps and resources to get integrated with R Studio, R markdown and GitHub. We promise its not that bad.
 
 ## But why though?
-![](https://ih0.redbubble.net/image.359892693.3208/pp%2C185x205-pad%2C210x230%2Cf8f8f8.lite-1u1.jpg)
+<img style="display: block; margin: 0 auto;" src="https://ih0.redbubble.net/image.359892693.3208/pp%2C185x205-pad%2C210x230%2Cf8f8f8.lite-1u1.jpg" />
 
 There are two major reasons.
 
