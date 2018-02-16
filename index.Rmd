@@ -2,7 +2,9 @@
 title: "Orientation"
 author: "Wendel Raymond, Tiff Stephens, Bryce Mecum"
 date: "February 8, 2018"
-output: html_document
+output: 
+  html_document: 
+    toc: yes
 editor_options: 
   chunk_output_type: console
 ---
