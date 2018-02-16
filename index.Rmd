@@ -6,9 +6,13 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.align="center")
+```
+
 ![](http://apecs-ak.org/wp-content/uploads/2017/08/cropped-APECS-Logo-326pixels.gif)
 
-# APECS, RStudio, R markdown, GitHub and you!
+# APECS, RStudio, GitHub, Rmarkdown and you!
 Thats right you! Here we will provide the steps and resources to get integrated with R Studio, R markdown and GitHub. We promise its not that bad.
 
 ## But why though?
