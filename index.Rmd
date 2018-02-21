@@ -8,6 +8,7 @@ output:
 editor_options: 
   chunk_output_type: console
 ---
+
 <img style="display: block; margin: 0 auto;" src="http://apecs-ak.org/wp-content/uploads/2017/08/cropped-APECS-Logo-326pixels.gif" />
 
 # APECS, RStudio, Rmarkdown, GitHub and you!
@@ -269,12 +270,12 @@ First lets start with the general workflow that we would like you to follow.
 
 When starting to work on anything in the APECS-master repository
 1. Pull
-2. do your work
+2. Do your work
 3. Save to your machine
-4. Commit
 5. Pull
 6. Review any changes/merges etc
-7. Push
+7. Commit
+8. Push
 
 Lets go over how things work on the data end of things. This is really important. It will make everyone's life easier in the long run. Take a look at the schematic below.
 
