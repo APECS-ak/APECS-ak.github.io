@@ -21,6 +21,18 @@ There are two major reasons.
 1. GitHub allows for tracking the changes to code and content across many people. This makes editing, contributing, and reverting easy. GitHub also provides interfaces that make sharing content way cleaner than tons of emails.
 2. The overlords have spoken and you have no choice.
 
+<<<<<<< HEAD
+=======
+## Outline
+1. Getting Started/R Studio /git /GitHub
+2. Repositories
+3. Working with R Markdown
+4. Best practices
+5. GitHub vocabulary
+6. APECS-ak repository
+7. Resources
+
+>>>>>>> 7780a6b6a26eede64c99fed29623578ffdde5696
 Depending on how long it takes to get through all this and what everyones interest is we would spend some time talking about dplyr, tidyr, and ggplot. However, the primary goal is to get you comfortable with Rmarkdown and GitHub.
 
 <br> <br> 
@@ -98,8 +110,11 @@ Within the project that you created in your practice GitHub repository, create a
 6. Now click push.
 7. Go back to your repository in your browser and you will see that new file you created. Hurray!
 
+<<<<<<< HEAD
 <br> <br> <br> <br> 
 
+=======
+>>>>>>> 7780a6b6a26eede64c99fed29623578ffdde5696
 ## Working in R Markdown
 
 ### What is R Markdown?
@@ -107,6 +122,7 @@ RMarkdown is an extension to a language called Markdown (text format for alterna
 
 R Markdown is amazing and we highly recommend that you learn how it works. If you are even somewhat comfortable/familiar with R it is not that much of a change. The biggest benefit is that R Markdown supports a more natural way of writing your code. You can seamlessly integrate normal text with R code, links, pictures, output etc. all in one place. The second amazing thing is that it is super easy to share what you did with collaborators in a clean, clear, reproducible product. No more strings of emails with various versions of various figures. Now Markdown does come with another set of vocabulary that you will have to become familiar with, but thing of it as a new R package. The more you use it the easier it will become. There are also great online resources. Like this [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
 
+<<<<<<< HEAD
 <br> <br>
 
 ### Practice
@@ -234,6 +250,18 @@ You can share your html file via a non-obvious URL link or you can save your htm
 
 
 <br> <br> <br> <br> <br> <br> 
+=======
+### R Markdown Practice
+Lets walk through writing a basic R Markdown together. We will also practice commiting and push to practice repository we made.
+
+1. First find your new repository file structure and in *that* folder create a new folder called "Data". Paste the data that I sent you there. We can use this as an example.
+2. Open R studio and change your project so that you are working in your practice repository
+3. Click File -> New File -> R Markdown.
+4. Give it a title etc. Here you can choose how you want your R Markdown to be rendered. HTML is a good default. Don't worry about this a bunch its easy to change later.
+5. Now that you have created your new file you should save it. I like to do this immediately.
+6. Now add some content.
+7. Commit your changes and Push
+>>>>>>> 7780a6b6a26eede64c99fed29623578ffdde5696
 
 ## Best Practices
 Lets talk about best practices. These are a combination of best practices of reproducible science and "rules" that we have come up for the APECS project.
@@ -259,7 +287,7 @@ Lets go over how things work on the data end of things. This is really important
 <br> <br>
 
 ### Workspace
-As we have seen, creating a or cloning a repository makes a R Project, and in the case of the APECS repository there are many R projects scattered in folders etc. It is important to work in the project appropriate to what you are working on. Why? this helps assign commits to the propper place. What is confusing is that you can load and R or Rmd file from anywhere into any project. That is fine if you want to refrence the code but do your best to be in the project that the primary code that you are working on is housed. You can easily change the project you are working in by selecting the .Rproj file that you want from the files tab in RStudio or from the project drop down in upper right corner.
+As we have seen, creating or cloning a repository makes a R Project, and in the case of the APECS repository there are many R projects scattered in folders etc. It is important to work in the project appropriate to what you are working on. Why? this helps assign commits to the proper place. What is confusing is that you can load and R or Rmd file from anywhere into any project. That is fine if you want to reference the code but do your best to be in the project that the primary code that you are working on is housed. You can easily change the project you are working in by selecting the .Rproj file that you want from the files tab in R Studio or from the project drop down in upper right corner.
 
 All that said we should add some detail to the workflow steps above. Especially step 2. After pulling you should check what project you are in, and change if necessary. Then do your work.
 
@@ -289,22 +317,34 @@ GitHub has a complete list [here](https://help.github.com/articles/github-glossa
 
 **Organization:**Organizations are shared accounts where businesses and open-source projects can collaborate across many projects at once. Owners and administrators can manage member access to the organization's data and projects with sophisticated security and administrative features.
 
+<<<<<<< HEAD
 ## Resources
 Any of these topics could take up a whole day or more of discussion and practice so we will just point you in the right direction for now. If you would like formal instruction we can arrange that.
 
 <br> <br>
-
+=======
 ## APECS master repository
+
+### Whats is in APECS-master anyway?
+The idea is that everything is in here. That way anyone can access data or code at any time. Content is broken down in to folders that roughly correspond to the different working groups of APECS. Don't see a folder corresponding to a project you are working on? No worries you can create one. Within a projects folder you will find code for doing various things related to that data. 
+>>>>>>> 7780a6b6a26eede64c99fed29623578ffdde5696
+
+The most important folder is the ALL_DATA folder. This is where all the data goes, whether it is RAW or derived. What does that mean? We are calling RAW data .csv files that nothing has been done to other than be entered and quality controlled. These files should not be edited, unless there is a very very very good reason and you tell Tiff about it. You may be asking, "what if my raw data has weird records in it that I need to fix before analysis?", no worries you can write code to make those changes and make a new file called data_CLEAN.csv. Now you may be thinking "but my raw data is not really the form I want it in for my analysis, then what?", no worries again, you can write code to summarize, massage, whatever to your raw data and save it as data_description_derived.csv. This is a great segway to talk about best practices
 
 ### Cloneing the APECS-master repository
 Follow the same steps as above but the repository already exists, so you can jump to step 3. Now is a good time to take a moment to think about where on your machine you want this folder to sit. There is a lot of stuff in the repository so it might take some time to download.
 
+<<<<<<< HEAD
 ## Whats is in APECS-master anyway?
 The idea is that everything is in here. That way anyone can access data or code at any time. Content is broken down in to folders that roughly correspond to the different working groups of APECS. Don't see a folder corresponding to a project you are working on? No worries you can create one. Within a projects folder you will find code for doing various things related to that data. 
 
 The most important folder is the ALL_DATA folder. This is where all the data goes, whether it is RAW or derived. What does that mean? We are calling RAW data .csv files that nothing has been done to other than be entered and quality controlled. These files should not be edited, unless there is a very very very good reason and you tell Tiff about it. You may be asking, "what if my raw data has weird records in it that I need to fix before analysis?", no worries you can write code to make those changes and make a new file called data_CLEAN.csv. Now you may be thinking "but my raw data is not really the form I want it in for my analysis, then what?", no worries again, you can write code to summarize, massage, whatever to your raw data and save it as data_description_derived.csv. This is a great segway to talk about best practices. 
 
 <br> <br>
+=======
+## Resources
+Any of these topics could take up a whole day or more of discussion and practice so we will just point you in the right direction for now. If you would like formal instruction we can arrange that.
+>>>>>>> 7780a6b6a26eede64c99fed29623578ffdde5696
 
 ### dplyr and tidyr
 If you know about and have used these packages already you know why we think this is important. These packages greatly simplify data manipulation and summarization. See [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)

@@ -1,0 +1,24 @@
+---
+title: "rmd_practice_complete"
+author: "Wendel Raymond"
+date: "February 21, 2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# R Markdown practice
+Lets see how this works. 
+
+## Loading libraries
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+
+## Loading data
+```{r}
+dat <- read.csv("Data/seagrass_seaotter_pit_sediment_2017_CLEAN.csv", header = TRUE, stringsAsFactors = FALSE)
+```
+
