@@ -21,9 +21,6 @@ There are two major reasons.
 1. GitHub allows for tracking the changes to code and content across many people. This makes editing, contributing, and reverting easy. GitHub also provides interfaces that make sharing content way cleaner than tons of emails.
 2. The overlords have spoken and you have no choice.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 ## Outline
 1. Getting Started/R Studio /git /GitHub
 2. Repositories
@@ -226,7 +223,7 @@ plot(plot_om_all)
 
 
 7. You can even include an interactive map if you have the GPS coordinates for stuff. It's very easy: 
-```{r}
+```{r, include = TRUE}
 library(leaflet)
 
 # map "locations_all"
