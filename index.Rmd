@@ -107,9 +107,7 @@ Within the project that you created in your practice GitHub repository, create a
 6. Now click push.
 7. Go back to your repository in your browser and you will see that new file you created. Hurray!
 
-
 <br> <br> <br> <br> 
-
 
 ## Working in R Markdown
 
@@ -117,7 +115,6 @@ Within the project that you created in your practice GitHub repository, create a
 RMarkdown is an extension to a language called Markdown (text format for alternative word processing actions, but derectives are coded instead of a button being pressed, like in Word) that allows several additional formatting directives, most notably code blocks that let you embed R code in your document. When the document is processed, the code blocks can be executed, so that code output like figures can be included directly in the formatted document. This can be used to make text documents for sharing and APECS have started doing this to share analyses. 
 
 R Markdown is amazing and we highly recommend that you learn how it works. If you are even somewhat comfortable/familiar with R it is not that much of a change. The biggest benefit is that R Markdown supports a more natural way of writing your code. You can seamlessly integrate normal text with R code, links, pictures, output etc. all in one place. The second amazing thing is that it is super easy to share what you did with collaborators in a clean, clear, reproducible product. No more strings of emails with various versions of various figures. Now Markdown does come with another set of vocabulary that you will have to become familiar with, but thing of it as a new R package. The more you use it the easier it will become. There are also great online resources. Like this [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
-
 
 <br> <br>
 
@@ -133,7 +130,6 @@ R Markdown is amazing and we highly recommend that you learn how it works. If yo
   + The "include = " command for chunks is responsible for displaying the product of the code (= TRUE) or not displaying it (= FALSE). By product, we mean plots or information that normally is shown in the console (e.g. summaries, matrix information). 
   + **Practice changing these echo and include commands in your chunk options to see how the knitted output changes for each. *Note: you need to add "Include = " to the chunk command line.* **
 
-  
 <br> <br> 
  
 ### Create your own R Markdown
@@ -197,6 +193,7 @@ df.core <- read.csv("https://raw.githubusercontent.com/APECS-ak/APECS-master-rep
 ```{r}
 colnames(df.core)
 ```
+
 <br><br>
 
 ```{r, echo = TRUE, include = TRUE, warning = FALSE}
@@ -217,11 +214,8 @@ plot_om_all = ggplot(df.core, aes(layer_depth, om_dw)) +
 
 plot(plot_om_all)
 ```
+
 <br><br><br><br>
-
-
-
-
 
 7. You can even include an interactive map if you have the GPS coordinates for stuff. It's very easy: 
 ```{r, include = TRUE}
@@ -232,8 +226,8 @@ leaflet(df.core) %>%
   addTiles() %>%
   addMarkers(~longitude, ~latitude, popup = ~site, label = ~site)
 ```
-<br> <br> <br> <br> 
 
+<br> <br> <br> <br> 
 
 ### Share/publish your work 
 You can share your html file via a non-obvious URL link or you can save your htmls on RPubs. Wendel often uses a unique link and Tiff likes to save her output on RPubs. Why? It has a lot to do with privacy...both options are totally public but the former is sneaky public (need exact URL) and the other adds html/PDFs to an existing personal and public portfolio.
@@ -244,7 +238,6 @@ You can share your html file via a non-obvious URL link or you can save your htm
  + After your .Rmd file knits as an html, select the "Publish" button on the top right of the preview window that pops up post-knitting. 
  + Select the RPubs option (if you are new, you will need to create an account).
  + After all of the prompts, your html is now published online and you can keep track of all of your files in this portfolia, sending links to people that you want to share with! 
-
 
 <br> <br> <br> <br> <br> <br> 
 
@@ -282,7 +275,7 @@ Alright great... but when should I commit? Great question! There is no solid ans
 <br> <br>
 
 ### Naming convention
-**Data:** By now you may have noticed that the files in the ALL_DATA folder have a similar naming convention. For clarity we would like we preserve that as much as possible. As we mentioned above the basic formula works like this: 
+**The Data:** By now you may have noticed that the files in the ALL_DATA folder have a similar naming convention. For clarity we would like we preserve that as much as possible. As we mentioned above the basic formula works like this: 
 
 data_description_derived.csv
 
@@ -310,18 +303,13 @@ Any of these topics could take up a whole day or more of discussion and practice
 
 ## APECS master repository
 
-### Whats is in APECS-master anyway?
-The idea is that everything is in here. That way anyone can access data or code at any time. Content is broken down in to folders that roughly correspond to the different working groups of APECS. Don't see a folder corresponding to a project you are working on? No worries you can create one. Within a projects folder you will find code for doing various things related to that data. 
-
-## APECS master repository
-
 ### Cloneing the APECS-master repository
 Follow the same steps as above but the repository already exists, so you can jump to step 3. Now is a good time to take a moment to think about where on your machine you want this folder to sit. There is a lot of stuff in the repository so it might take some time to download.
 
-## Whats is in APECS-master anyway?
+### Whats is in APECS-master anyway?
 The idea is that everything is in here. That way anyone can access data or code at any time. Content is broken down in to folders that roughly correspond to the different working groups of APECS. Don't see a folder corresponding to a project you are working on? No worries you can create one. Within a projects folder you will find code for doing various things related to that data. 
 
-The most important folder is the ALL_DATA folder. This is where all the data goes, whether it is RAW or derived. What does that mean? We are calling RAW data .csv files that nothing has been done to other than be entered and quality controlled. These files should not be edited, unless there is a very very very good reason and you tell Tiff about it. You may be asking, "what if my raw data has weird records in it that I need to fix before analysis?", no worries you can write code to make those changes and make a new file called data_CLEAN.csv. Now you may be thinking "but my raw data is not really the form I want it in for my analysis, then what?", no worries again, you can write code to summarize, massage, whatever to your raw data and save it as data_description_derived.csv. This is a great segway to talk about best practices. 
+The most important folder is the ALL_DATA folder. This is where all the data goes, whether it is RAW or derived. What does that mean? We are calling RAW data .csv files that nothing has been done to other than be entered and quality controlled. These files should not be edited, unless there is a very very very good reason and you tell Tiff about it. You may be asking, "what if my raw data has weird records in it that I need to fix before analysis?", no worries you can write code to make those changes and make a new file called data_CLEAN.csv. Now you may be thinking "but my raw data is not really the form I want it in for my analysis, then what?", no worries again, you can write code to summarize, massage, whatever to your raw data and save it as data_description_derived.csv. 
 
 ## Resources
 Any of these topics could take up a whole day or more of discussion and practice so we will just point you in the right direction for now. If you would like formal instruction we can arrange that.
