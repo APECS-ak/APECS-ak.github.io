@@ -127,11 +127,12 @@ R Markdown is amazing and we highly recommend that you learn how it works. If yo
 2. You will see some text + code already included in this new file. *Wendel: this may be a good time to briefly explain each feature (e.g. chunks and non-chunks)*.
 3. Go ahead and run the file using the "Knit" button to see an example of the output from the script...choose the "Knit to html" option. Cool, ya?
 4. Chunks: the place where you type code. This is just like the R you are familiar with. 
-  + Creat a new chunk by (a) going to "Code" in the top bar and selecting "Insert Chunk" or (b) using shortcut keys to insert a new chunk...**option + command + i** for mac users. There are a lot of [chunk options](https://rmarkdown.rstudio.com/lesson-3.html), but we use the to control the echo, include, warnings, and size of plot outputs most often.
+  + Creat a new chunk by (a) going to "Code" in the top bar and selecting "Insert Chunk" or (b) using shortcut keys to insert a new chunk...**option + command + i** for mac users or **control + alt + i** for PC users. There are a lot of [chunk options](https://rmarkdown.rstudio.com/lesson-3.html), but we use the to control the echo, include, warnings, and size of plot outputs most often.
 5. Echo versus include in the chunk commands
   + The "echo = " command for the chunks is responsible for displaying the code (= TRUE) or not displaying the code (= FALSE) in each chunk. Sometimes you don't want to show people what the code is for a given output if your goal is to have a nice file that shows results. 
   + The "include = " command for chunks is responsible for displaying the product of the code (= TRUE) or not displaying it (= FALSE). By product, we mean plots or information that normally is shown in the console (e.g. summaries, matrix information). 
   + **Practice changing these echo and include commands in your chunk options to see how the knitted output changes for each. *Note: you need to add "Include = " to the chunk command line.* **
+
   
 <br> <br> 
  
@@ -247,18 +248,6 @@ You can share your html file via a non-obvious URL link or you can save your htm
 
 <br> <br> <br> <br> <br> <br> 
 
-### R Markdown Practice
-Lets walk through writing a basic R Markdown together. We will also practice commiting and push to practice repository we made.
-
-1. First find your new repository file structure and in *that* folder create a new folder called "Data". Paste the data that I sent you there. We can use this as an example.
-2. Open R studio and change your project so that you are working in your practice repository
-3. Click File -> New File -> R Markdown.
-4. Give it a title etc. Here you can choose how you want your R Markdown to be rendered. HTML is a good default. Don't worry about this a bunch its easy to change later.
-5. Now that you have created your new file you should save it. I like to do this immediately.
-6. Now add some content.
-7. Commit your changes and Push
-
-
 ## Best Practices
 Lets talk about best practices. These are a combination of best practices of reproducible science and "rules" that we have come up for the APECS project.
 
@@ -267,7 +256,8 @@ Lets talk about best practices. These are a combination of best practices of rep
 ### Workflow
 First lets start with the general workflow that we would like you to follow.
 
-When starting to work on anything in the APECS-master repository
+When starting to work on anything in the APECS-master repository.
+
 1. Pull
 2. do your work
 3. Save to your machine
@@ -333,9 +323,6 @@ The idea is that everything is in here. That way anyone can access data or code 
 
 The most important folder is the ALL_DATA folder. This is where all the data goes, whether it is RAW or derived. What does that mean? We are calling RAW data .csv files that nothing has been done to other than be entered and quality controlled. These files should not be edited, unless there is a very very very good reason and you tell Tiff about it. You may be asking, "what if my raw data has weird records in it that I need to fix before analysis?", no worries you can write code to make those changes and make a new file called data_CLEAN.csv. Now you may be thinking "but my raw data is not really the form I want it in for my analysis, then what?", no worries again, you can write code to summarize, massage, whatever to your raw data and save it as data_description_derived.csv. This is a great segway to talk about best practices. 
 
-<br> <br>
-<<<<<<< HEAD
-=======
 ## Resources
 Any of these topics could take up a whole day or more of discussion and practice so we will just point you in the right direction for now. If you would like formal instruction we can arrange that.
 
