@@ -21,19 +21,14 @@ There are two major reasons.
 1. GitHub allows for tracking the changes to code and content across many people. This makes editing, contributing, and reverting easy. GitHub also provides interfaces that make sharing content way cleaner than tons of emails.
 2. The overlords have spoken and you have no choice.
 
-## Outline
-1. Getting Started/R Studio /git /GitHub
-2. Rmarkdown practice
-3. Repositories
-4. APECS-ak repository
-5. Best practices
-6. GitHub vocabulary
-7. Resources
-
 Depending on how long it takes to get through all this and what everyones interest is we would spend some time talking about dplyr, tidyr, and ggplot. However, the primary goal is to get you comfortable with Rmarkdown and GitHub.
 
+<br> <br> 
+ 
 ## Getting started
 We have borrowed many of the steps and techniques from the [SASAP training](https://nceas.github.io/sasap-training/materials/reproducible-analysis-in-r/index.html) that Tiff and I attended. We encourage you to use their site as an additional resource.
+
+<br> <br> <br> <br> 
 
 ## RStudio and Git/GitHub set up
 1. If you do not have R Studio already, [download](https://www.rstudio.com/products/rstudio/download/) it.
@@ -76,6 +71,8 @@ Repositories are where things are stored on GitHub. You can think of them as fol
 
 We will also go over what it means to commit, push and pull.
 
+<br> <br> 
+
 ### Practice
 First lets make a practice repository on your own GitHub account **NOT** in the APECS-ak account just yet. There are multiple ways to do this but we will show you what we think is the easiest. There are steps for doing it in other ways on the SASAP training site but we are showing you the most straighforward approach.
 
@@ -101,6 +98,7 @@ Within the project that you created in your practice GitHub repository, create a
 6. Now click push.
 7. Go back to your repository in your browser and you will see that new file you created. Hurray!
 
+<br> <br> <br> <br> 
 
 ## Working in R Markdown
 
@@ -109,19 +107,138 @@ RMarkdown is an extension to a language called Markdown (text format for alterna
 
 R Markdown is amazing and we highly recommend that you learn how it works. If you are even somewhat comfortable/familiar with R it is not that much of a change. The biggest benefit is that R Markdown supports a more natural way of writing your code. You can seamlessly integrate normal text with R code, links, pictures, output etc. all in one place. The second amazing thing is that it is super easy to share what you did with collaborators in a clean, clear, reproducible product. No more strings of emails with various versions of various figures. Now Markdown does come with another set of vocabulary that you will have to become familiar with, but thing of it as a new R package. The more you use it the easier it will become. There are also great online resources. Like this [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf).
 
+<br> <br>
+
+### Practice
+
+1. In your current practice project, open a new R Markdown file. Save appropriately. 
+2. You will see some text + code already included in this new file. *Wendel: this may be a good time to briefly explain each feature (e.g. chunks and non-chunks)*.
+3. Go ahead and run the file using the "Knit" button to see an example of the output from the script...choose the "Knit to html" option. Cool, ya?
+4. Chunks: the place where you type code. This is just like the R you are familiar with. 
+  + Creat a new chunk by (a) going to "Code" in the top bar and selecting "Insert Chunk" or (b) using shortcut keys to insert a new chunk...**option + command + i** for mac users. There are a lot of [chunk options](https://rmarkdown.rstudio.com/lesson-3.html), but we use the to control the echo, include, warnings, and size of plot outputs most often.
+5. Echo versus include in the chunk commands
+  + The "echo = " command for the chunks is responsible for displaying the code (= TRUE) or not displaying the code (= FALSE) in each chunk. Sometimes you don't want to show people what the code is for a given output if your goal is to have a nice file that shows results. 
+  + The "include = " command for chunks is responsible for displaying the product of the code (= TRUE) or not displaying it (= FALSE). By product, we mean plots or information that normally is shown in the console (e.g. summaries, matrix information). 
+  + **Practice changing these echo and include commands in your chunk options to see how the knitted output changes for each. *Note: you need to add "Include = " to the chunk command line.* **
+  
+<br> <br> 
+ 
+### Create your own R Markdown
+RMarkdown supports a number of formatting directives, check out this [reference guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf); which is very similar to the previous cheat sheet. 
+
+1. Either open a new R Markdown file or delete the text/code in the first practice file. 
+2. Now try inputting your own content to make a unique file! Make sure to check out how it gets knitted to html frequently so that you can better learn the direct output to your input, and address anything that is confusing, step-by-step. 
+
+<br> 
+
+3. Enter text and practice formatting in non-chunk space (e.g. **make stuff bold**, ~~strike words out~~). 
+```{r}
+# Enter text and practice formatting in non-chunk space (e.g. **make stuff bold**, ~~strike words out~~).
+```
+
+<br> 
+
+4. #### Change the size of text using hashtags (more = small, fewer = big)
+```{r}
+# #### Change the size of text using hashtags (more = small, fewer = big)
+```
+
+<br> 
+
+5. Add links: Links can be pasted in to show the whole URL like http://apecs-ak.org/, or can be linked to a specific chunk of text, e.g., to the [APECS](http://apecs-ak.org/) project (see code below). 
+```{r, echo = TRUE, include=TRUE}
+# Links can be pasted in to show the whole URL like http://apecs-ak.org/, or can be linked to a specific chunk of text, e.g., to the [APECS](http://apecs-ak.org/) project.
+```
+
+<br> 
+
+6. Within your local file structure and within your project folder, create a subfolder for "images", then you can add images to your R Markdown file. Images are like links, but prepended with an ! exclamation point.
+```{r}
+# ![](images/bananas.png)
+```
+  ![](images/bananas.png)
+  
+<br> 
+  
+**There are a lot of tricks with working with images in R Markdown, which can be explored via searches on the ol' Google.**
+
+[This page, for example.](http://www.zevross.com/blog/2017/06/19/tips-and-tricks-for-working-with-images-and-figures-in-r-markdown-documents/#the-fig.retina-argument-is-a-resolution-multiplier)
+
+<br> <br> <br> <br> 
+
+### Let's add a data set! 
+For APECS work, we import csv files from the master repository, where all the data (raw and clean) are kept. Let's practice calling upon a data file from GitHub: 
+
+1. In GitHub (your practice repository), upload a practice csv file (your own data might be best). 
+2. After it has successfully uploaded, click on the blue link to that csv file.
+3. Just above the data table, you will find a buttong that reads "Raw", click it and it will take you to a page with the raw text from that file. Ignore the text but copy the URL address for this page! 
+4. Tell your R Markdown that you want to upload the dataframe from that URL: 
+```{r}
+# read clean file from github
+df.core <- read.csv("https://raw.githubusercontent.com/APECS-ak/APECS-master-repos/master/ALL_DATA/core_matter_2017_CLEAN.csv", stringsAsFactors = FALSE, header = TRUE)
+```
+<br>
+
+5. Run the line. Sweet, you have a new dataframe! 
+6. Now you can display info about your data frame or plot a simple scatter plot or bar graph using these data, and include them in your R Markdown html output. e.g.:
+```{r}
+colnames(df.core)
+```
+<br><br>
+
+```{r, echo = TRUE, include = TRUE, warning = FALSE}
+library(ggplot2)
+theme_set(theme_classic())
+
+# plot organic matter
+plot_om_all = ggplot(df.core, aes(layer_depth, om_dw)) +
+  stat_summary(fun.y=mean, geom="point") +
+  stat_summary(fun.data=mean_se, geom="errorbar", width=0.5) +
+  coord_flip() +
+  scale_x_reverse() +
+  xlab("Core Depth (cm)") +
+  ylab("Organic Matter (g dry weight)")
+  #scale_x_continuous(position = "top") +
+  #scale_y_continuous(position = "left") +
+  #facet_wrap(~site, ncol = 1)
+
+plot(plot_om_all)
+```
+<br><br><br><br>
 
 
 
 
 
+7. You can even include an interactive map if you have the GPS coordinates for stuff. It's very easy: 
+```{r}
+library(leaflet)
+
+# map "locations_all"
+leaflet(df.core) %>%
+  addTiles() %>%
+  addMarkers(~longitude, ~latitude, popup = ~site, label = ~site)
+```
+<br> <br> <br> <br> 
 
 
+### Share/publish your work 
+You can share your html file via a non-obvious URL link or you can save your htmls on RPubs. Wendel often uses a unique link and Tiff likes to save her output on RPubs. Why? It has a lot to do with privacy...both options are totally public but the former is sneaky public (need exact URL) and the other adds html/PDFs to an existing personal and public portfolio.
+
+1. The non-obvious link way:
+ + Wendel, please fill this in...I can't remember the format!
+2. The RPub way
+ + After your .Rmd file knits as an html, select the "Publish" button on the top right of the preview window that pops up post-knitting. 
+ + Select the RPubs option (if you are new, you will need to create an account).
+ + After all of the prompts, your html is now published online and you can keep track of all of your files in this portfolia, sending links to people that you want to share with! 
 
 
-
+<br> <br> <br> <br> <br> <br> 
 
 ## Best Practices
 Lets talk about best practices. These are a combination of best practices of reproducible science and "rules" that we have come up for the APECS project.
+
+<br> <br>
 
 ### Workflow
 First lets start with the general workflow that we would like you to follow.
@@ -139,12 +256,16 @@ Lets go over how things work on the data end of things. This is really important
 
 ![](Images/data.png)
 
+<br> <br>
+
 ### Workspace
 As we have seen, creating a or cloning a repository makes a R Project, and in the case of the APECS repository there are many R projects scattered in folders etc. It is important to work in the project appropriate to what you are working on. Why? this helps assign commits to the propper place. What is confusing is that you can load and R or Rmd file from anywhere into any project. That is fine if you want to refrence the code but do your best to be in the project that the primary code that you are working on is housed. You can easily change the project you are working in by selecting the .Rproj file that you want from the files tab in RStudio or from the project drop down in upper right corner.
 
 All that said we should add some detail to the workflow steps above. Especially step 2. After pulling you should check what project you are in, and change if necessary. Then do your work.
 
 Alright great... but when should I commit? Great question! There is no solid answer for this and it depends on what you are doing but in general you should commit and push when you have made substantial changes to what you are working on. For example Wendel may be working in R all day. First he needs to write a bunch on analysis code. This takes him a while. During his work time he **saves to his machine** a few times. When he finishes and is ready to work on code for this orientation he will **first commit and push** his work on the analysis code. Then he **will switch projects** and start working on the orientation code and repeat his logic...
+
+<br> <br>
 
 ### Naming convention
 **Data:** By now you may have noticed that the files in the ALL_DATA folder have a similar naming convention. For clarity we would like we preserve that as much as possible. As we mentioned above the basic formula works like this: 
@@ -154,6 +275,8 @@ data_description_derived.csv
 text elements should be separated by and underscore "_". For the most part files should end with either "_RAW", "_CLEAN", or "_derived". However there are some exceptions. For example the fish length-weight conversion data is in progress so it ends with the date it was last edited. In general we want to avoid putting in progress data in the folder. The fish l-w conversion is a bit of an exception because we are building the data while using it at the same time.
 
 **Code:** You may also have noticed that .R and .Rmd files have a similar naming convention as well. The rules are not quite as strict here but use underscores and be logical. If there are scripts that are related they should have a related name. For example "Eelgrass_community_structure_analyses.Rmd" is where all the complicated long for model code is and "Eelgrass_community_structure_analyses_summaries.Rmd" is the simplified version that is nice to share with others. A more simple example is "Tiff_explore_seds.Rmd". In the seagrass group we had a little task to explore different elements of the data and report back. the key is to be descriptive by succinct. "Wendel_models_3.Rmd" is **not** a good name. 
+
+<br> <br>
 
 ## GitHub Vocabulary
 GitHub has a complete list [here](https://help.github.com/articles/github-glossary/) but here are some key ones beyond what we have talked about above, which we hope you at least intuitively understand now.
@@ -169,7 +292,7 @@ GitHub has a complete list [here](https://help.github.com/articles/github-glossa
 ## Resources
 Any of these topics could take up a whole day or more of discussion and practice so we will just point you in the right direction for now. If you would like formal instruction we can arrange that.
 
-
+<br> <br>
 
 ## APECS master repository
 
@@ -181,9 +304,12 @@ The idea is that everything is in here. That way anyone can access data or code 
 
 The most important folder is the ALL_DATA folder. This is where all the data goes, whether it is RAW or derived. What does that mean? We are calling RAW data .csv files that nothing has been done to other than be entered and quality controlled. These files should not be edited, unless there is a very very very good reason and you tell Tiff about it. You may be asking, "what if my raw data has weird records in it that I need to fix before analysis?", no worries you can write code to make those changes and make a new file called data_CLEAN.csv. Now you may be thinking "but my raw data is not really the form I want it in for my analysis, then what?", no worries again, you can write code to summarize, massage, whatever to your raw data and save it as data_description_derived.csv. This is a great segway to talk about best practices. 
 
+<br> <br>
 
 ### dplyr and tidyr
 If you know about and have used these packages already you know why we think this is important. These packages greatly simplify data manipulation and summarization. See [cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
+
+<br> <br>
 
 ### ggplot2
 The ggplot2 package makes it fairly easy to make really good looking graphics. See [cheet sheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
